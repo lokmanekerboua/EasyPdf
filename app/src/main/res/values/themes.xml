@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.EasyPDF" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.EasyPDF.splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenAnimatedIcon">@drawable/bluesky</item>
+        <item name="windowSplashScreenAnimationDuration">5000</item>
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="postSplashScreenTheme">@style/Theme.EasyPDF</item>
+    </style>
+</resources>

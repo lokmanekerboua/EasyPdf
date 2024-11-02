@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "361470145875",
+    "project_id": "easypdf-4082f",
+    "storage_bucket": "easypdf-4082f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:361470145875:android:61cdb1058fb13d7ed79da6",
+        "android_client_info": {
+          "package_name": "me.lokmvne.easypdf"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "361470145875-rmc3fa12c5nabrdqpp7ms2mhs5mdl75k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "me.lokmvne.easypdf",
+            "certificate_hash": "b6e0306f490d2ae9fd7d36c85394fcbbcbb792ca"
+          }
+        },
+        {
+          "client_id": "361470145875-9osmkmcbsg6mok930hasjdqqu11j93r1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2pNRl-6f8aYcu5t37lDNbIle70zPHIGc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "361470145875-9osmkmcbsg6mok930hasjdqqu11j93r1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
