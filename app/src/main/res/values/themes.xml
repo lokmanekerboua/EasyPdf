@@ -4,9 +4,10 @@
     <style name="Theme.EasyPDF" parent="android:Theme.Material.Light.NoActionBar" />
 
     <style name="Theme.EasyPDF.splash" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenAnimatedIcon">@drawable/bluesky</item>
-        <item name="windowSplashScreenAnimationDuration">5000</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/mylogo</item>
+        <item name="windowSplashScreenAnimationDuration">3000</item>
         <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="splashScreenIconSize">@dimen/splashscreen_icon_size</item>
         <item name="postSplashScreenTheme">@style/Theme.EasyPDF</item>
     </style>
 </resources>

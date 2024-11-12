@@ -23,3 +23,4 @@ rootProject.name = "EasyPDF"
 include(":app")
 include(":common")
 include(":home")
+include(":welcome")

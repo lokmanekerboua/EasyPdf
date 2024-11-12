@@ -24,16 +24,6 @@ android {
         targetSdk = targetSdk
         versionCode = 1
         versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-        val parameteresfile = rootProject.file("parameters.properties")
-        val keystoreProperties = Properties()
-        keystoreProperties.load(parameteresfile.inputStream())
-
-        val webClientId = keystoreProperties.getProperty("WEB_CLIENT_ID") ?: ""
-
-        buildConfigField("String", "WEB_CLIENT_ID", "\"$webClientId\"")
     }
 
     buildTypes {
@@ -60,6 +50,7 @@ android {
 dependencies {
     implementation(project(":common"))
     implementation(project(":home"))
+    implementation(project(":welcome"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -106,7 +97,10 @@ dependencies {
     //coroutines
     implementation(libs.kotlinx.coroutines.android)
 
-    //pdf
-    //implementation(libs.androidx.pdf.viewer.fragment)
-
+    //Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.squareup.retrofit2.gson)
+    //Okhttp
+    implementation(libs.squareup.okhttp3.logging.interceptor)
+    implementation(libs.okhttp)
 }
