@@ -9,6 +9,9 @@ import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import me.lokmvne.common.utils.ObserveAsEvent
+import me.lokmvne.common.utils.navigationRoutes.AppMainScreens
+import me.lokmvne.common.utils.navigationRoutes.HOME_NAV_GRAPH_ROUTE
+import me.lokmvne.common.utils.navigationRoutes.WelcomeScreens
 
 @Composable
 fun SplashScreen(navHostController: NavHostController) {
@@ -25,24 +28,24 @@ fun SplashScreen(navHostController: NavHostController) {
         when (it) {
 
             StartDestination.WelcomeOnBoardingScreen -> {
-                navHostController.navigate(AppScreens.WelcomeOnBoardingScreen.route) {
-                    popUpTo(AppScreens.SplashScreen.route) {
+                navHostController.navigate(WelcomeScreens.WelcomeOnBoardingScreen.route) {
+                    popUpTo(AppMainScreens.SplashScreen.route) {
                         inclusive = true
                     }
                 }
             }
 
             StartDestination.WelcomeLoginScreen -> {
-                navHostController.navigate(AppScreens.WelcomeLoginScreen.route) {
-                    popUpTo(AppScreens.SplashScreen.route) {
+                navHostController.navigate(WelcomeScreens.WelcomeLoginScreen.route) {
+                    popUpTo(AppMainScreens.SplashScreen.route) {
                         inclusive = true
                     }
                 }
             }
 
             StartDestination.HomeScreen -> {
-                navHostController.navigate(AppScreens.HomeNavGraph.route) {
-                    popUpTo(AppScreens.SplashScreen.route) {
+                navHostController.navigate(HOME_NAV_GRAPH_ROUTE) {
+                    popUpTo(AppMainScreens.SplashScreen.route) {
                         inclusive = true
                     }
                 }

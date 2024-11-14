@@ -51,6 +51,7 @@ dependencies {
     implementation(project(":common"))
     implementation(project(":home"))
     implementation(project(":welcome"))
+    implementation(project(":auth"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

@@ -7,8 +7,8 @@ import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
+import me.lokmvne.auth.repository.GoogleFirebaseAuthRepository
 import me.lokmvne.common.repository.DataPreferencesRepository
-import me.lokmvne.welcome.repository.GoogleFirebaseAuthRepository
 import javax.inject.Inject
 
 @HiltViewModel

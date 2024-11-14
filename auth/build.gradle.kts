@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
@@ -11,7 +13,7 @@ val minSdkVersion = rootProject.extra["minSdkVersion"] as Int
 val rootcompileSdk = rootProject.extra["compileSdk"] as Int
 
 android {
-    namespace = "me.lokmvne.home"
+    namespace = "me.lokmvne.auth"
     compileSdk = rootcompileSdk
 
     defaultConfig {
@@ -19,6 +21,15 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
+        val parameteresfile = rootProject.file("parameters.properties")
+        val keystoreProperties = Properties()
+        keystoreProperties.load(parameteresfile.inputStream())
+
+        val webClientId = keystoreProperties.getProperty("WEB_CLIENT_ID") ?: ""
+
+        buildConfigField("String", "WEB_CLIENT_ID", "\"$webClientId\"")
+
     }
 
     buildTypes {
@@ -38,13 +49,14 @@ android {
         jvmTarget = javaVersion.toString()
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
 }
 
 dependencies {
+
     implementation(project(":common"))
-    implementation(project(":auth"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -77,7 +89,14 @@ dependencies {
     //Okhttp
     implementation(libs.squareup.okhttp3.logging.interceptor)
     implementation(libs.okhttp)
-    //coil
-    implementation(libs.io.coil)
 
+    //google credentials
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.googleid)
+
+    //firebase
+    implementation(platform(libs.google.firebase.bom))
+    implementation(libs.google.firebase.analytics)
+    implementation(libs.google.firebase.auth)
 }

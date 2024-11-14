@@ -23,16 +23,6 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-        val parameteresfile = rootProject.file("parameters.properties")
-        val keystoreProperties = Properties()
-        keystoreProperties.load(parameteresfile.inputStream())
-
-        val webClientId = keystoreProperties.getProperty("WEB_CLIENT_ID") ?: ""
-
-        buildConfigField("String", "WEB_CLIENT_ID", "\"$webClientId\"")
     }
 
     buildTypes {
@@ -59,6 +49,7 @@ android {
 
 dependencies {
     implementation(project(":common"))
+    implementation(project(":auth"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

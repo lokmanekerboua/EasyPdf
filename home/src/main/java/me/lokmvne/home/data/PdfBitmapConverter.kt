@@ -48,4 +48,10 @@ class PdfBitmapConverter @Inject constructor(
             }
         }
     }
+
+    suspend fun closeRenderer() {
+        withContext(Dispatchers.IO) {
+            renderer?.close()
+        }
+    }
 }
